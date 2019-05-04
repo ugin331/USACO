@@ -30,31 +30,35 @@ void input(){
     }
 }
 
+int getLowestPossIndex(char key, int currIndex, unordered_map<char, vector<int>> charmap){
+    auto itr = charmap.find(key);
+    if(itr == charmap.end()){
+	return -1;
+    }
+    vector<int> &indexVec = itr->second;
+    int veclen = indexVec.size();
+    for(int i = 0; i < veclen; i++){
+	if(indexVec[i] > currIndex){
+	    return indexVec[i];
+	}
+    }
+    return -1;
+}
+
 bool ContainsGoodStr(unordered_map<char, vector<int>> charmap, string goodStr){
     int len = goodStr.length();
-    bool cont = false;
+    //bool cont = false;
     int posinstring = 0;
     for(int i = 0; i < len; i++){
-	cont = false;
 	char character = tolower(goodStr[i]);
-	auto itr = charmap.find(character);
-	if(itr == charmap.end()){
-	    return false;
-	}
-	vector<int> tempvec = itr->second;
-	int veclen = tempvec.size();
-	for(int j = 0; j < veclen; j++){
-	    if(tempvec[j] > posinstring){
-		posinstring = tempvec[j];
-		cont = true;
-		break;
-	    }
-  	}
-	if(!cont){
+	posinstring = getLowestPossIndex(character, posinstring, charmap);
+	//if returned -1 by lowest index finder then false
+	if(posinstring == -1){
 	    return false;
 	}
     }
-    return cont;
+    //return cont;
+    return true;
 }
 
 int main(){
