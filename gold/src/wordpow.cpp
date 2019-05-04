@@ -63,8 +63,8 @@ bool ContainsGoodStr(unordered_map<char, vector<int>> charmap, string goodStr){
 
 int main(){
     input();
-    int points = 0;
     for(int i = 0; i < numCows; i++){
+        int points = 0;
         //cout << " processing " << i << "th word" << endl;
 	unordered_map <char, vector<int>> charMap;
 	int len = cowArray[i].length();
@@ -99,6 +99,6 @@ int main(){
 		points++;
 	    }
 	}
+        cout << points << endl;
     }
-    cout << points << endl;
 }
