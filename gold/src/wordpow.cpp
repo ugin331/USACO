@@ -65,11 +65,11 @@ int main(){
     input();
     for(int i = 0; i < numCows; i++){
         int points = 0;
-        //cout << " processing " << i << "th word" << endl;
+        cout << " processing " << i << "th word" << endl;
 	unordered_map <char, vector<int>> charMap;
 	int len = cowArray[i].length();
 	//generate map
-	//cout << "string: " << cowArray[i] << endl;
+	cout << "string: " << cowArray[i] << endl;
 	for(int l = 0; l < len; l++){
 	    char character = tolower(cowArray[i][l]);
 	    vector<int> temp;
@@ -80,12 +80,12 @@ int main(){
 
 	for(auto& itr : charMap){
 	    vector<int> &tempvec = itr.second;
-	    //cout << "letter: " << itr.first << endl;
-	    //cout << "in positions: ";
-	    //for(int j = 0; j < tempvec.size(); j++){
-		//cout << tempvec[j] << " ";
-	    //}
-	    //cout << endl;
+	    cout << "letter: " << itr.first << endl;
+	    cout << "in positions: ";
+	    for(int j = 0; j < tempvec.size(); j++){
+		cout << tempvec[j] << " ";
+	    }
+	    cout << endl;
 	}
 
 	//go through all the good strings
