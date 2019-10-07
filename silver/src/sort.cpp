@@ -45,5 +45,6 @@ int main(){
 	answer = max(answer, nums[i].index-i);
     }
     cout << endl;
-    cout << "answer: " << answer << endl;
+    //correct for off by one
+    cout << "answer: " << answer+1 << endl;
 }
