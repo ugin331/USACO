@@ -81,8 +81,8 @@ int main(){
 	if(points[i].startEnd == 0){
 	    active.push_back(points[i].seqNum);
 	    used[points[i].seqNum] = true;
-	    cout << "adding new active sequence: " << points[i].seqNum << endl;
-	    cout << endl;
+	    //cout << "adding new active sequence: " << points[i].seqNum << endl;
+	    //cout << endl;
   	}
 	//if chicken, pair it with the most recently ending sequence in the "active sequence queue"
 	else if(points[i].startEnd == -1){
@@ -101,10 +101,10 @@ int main(){
 		}
 	    }
   	    int toBeRemoved = locateVectorPos(active, shortestSeq);
-	    cout << "erasing smallest sequence: " << shortestSeq << endl;
-	    cout << "position in vector: " << toBeRemoved << endl;
-	    cout << "currently active sequences: " << active.size() << endl;
-	    cout << endl;
+	    //cout << "erasing smallest sequence: " << shortestSeq << endl;
+	    //cout << "position in vector: " << toBeRemoved << endl;
+	    //cout << "currently active sequences: " << active.size() << endl;
+	    //cout << endl;
 	    active.erase(active.begin()+toBeRemoved);
 	    totalCounter++;
 	}
@@ -113,10 +113,10 @@ int main(){
 	    int sequenceNum = points[i].seqNum;	    
 	    used[sequenceNum] = true;
 	    int toBeRemoved = locateVectorPos(active, sequenceNum);
-	    cout << "erasing ending sequence: " << sequenceNum << endl;
-	    cout << "position in vector: " << toBeRemoved << endl;
-	    cout << "currently active sequences: " << active.size() << endl;	
-	    cout << endl;
+	    //cout << "erasing ending sequence: " << sequenceNum << endl;
+	    //cout << "position in vector: " << toBeRemoved << endl;
+	    //cout << "currently active sequences: " << active.size() << endl;	
+	    //cout << endl;
 	    active.erase(active.begin()+toBeRemoved);
 	}
     }
