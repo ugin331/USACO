@@ -1,2 +1,2 @@
 # USACO
-usaco problem solutions
+**USACO PROBLEM SOLUTIONS**
