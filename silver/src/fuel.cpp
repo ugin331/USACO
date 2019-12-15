@@ -31,23 +31,26 @@ void input(){
     }
 }
 
-void CheapestBeyond(){
+void ClosestCheapestBeyond(){
+    //there are none beyond that are cheaper, so the cheapest is itself
     stations[numStations-1].cheapestBeyond = numStations-1;
     for(int i = numStations-2; i >= 0; i--){
-	int cheapestBeyondStation = stations[i+1].cheapestBeyond;
-	if(stations[i].price <= stations[cheapestBeyondStation].price){
-	    stations[i].cheapestBeyond = i;
-    	    continue;
+	int cheaperStation = i+1;
+	while(cheaperStation < numStations && stations[i].price <= stations[cheaperStation].price){
+	    cheaperStation = stations[cheaperStation].cheapestBeyond; //keep hopping
 	}
-        else{
-	    stations[i].cheapestBeyond = cheapestBeyondStation;
+	if(cheaperStation >= numStations){
+	    stations[i].cheapestBeyond = i;
+	}
+	else{
+	    stations[i].cheapestBeyond = cheaperStation;
 	}
     }
 }
 
 int main(){
     input();
-    CheapestBeyond();
+    ClosestCheapestBeyond();
     //basic logic:
     //if enough to reach destination, do it.
     //if not enough to reach next station, then the following:

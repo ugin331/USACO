@@ -32,6 +32,7 @@ void input(){
 
 int main(){
     input();
+    //current grass part we're looking at
     pair<int, int> currentGroup = pairlist[0];
     int numMissed = 0;
     int totalGroups = 0;
