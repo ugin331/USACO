@@ -55,8 +55,7 @@ int main(){
     //if enough to reach destination, do it.
     //if not enough to reach next station, then the following:
     //if cheaper is unreachable and/or current station is the cheapest, then fill as much as possible
-    //if not, then fill as much as is needed to get to the cheapest station
-    //if can reach next station keep going
+ 
     for(int i = 0; i < numStations; i++){
 	FuelStation tempStation = stations[i];
 	//subtract Fuel necessary to reach station
